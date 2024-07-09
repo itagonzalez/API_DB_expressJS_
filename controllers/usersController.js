@@ -50,7 +50,7 @@ exports.getUserById = (req, res) => {
 // Obtener un usuario por nombre de usuario
 exports.getUserByUserName = (req, res) => {
     const userName = req.params.user;
-    const sql = 'SELECT * FROM user WHERE user = ?';
+    const sql = 'SELECT * FROM users WHERE user = ?';
     db.get(sql, [userName], (err, row) => {
         if (err) {
             res.status(500).json({ error: err.message });
