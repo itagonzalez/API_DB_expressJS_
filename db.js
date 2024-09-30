@@ -21,7 +21,7 @@ function createTables() {
         password TEXT NOT NULL,
         email TEXT NOT NULL,
         address TEXT NOT NULL,
-        companyName TEXT NOT NULL,
+        phone TEXT NOT NULL,
         dateBirth TEXT NOT NULL
     )`);   
 }
