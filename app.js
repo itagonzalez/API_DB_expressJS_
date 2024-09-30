@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
-const timestampsRoutes = require('./routes/timestamps');
+const db = require('./db'); // Importa tu módulo de base de datos
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,7 +16,6 @@ app.use(cors());
 // Rutas
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
-app.use('/timestamps', timestampsRoutes);
 
 // Manejo de errores
 app.use((err, req, res, next) => {

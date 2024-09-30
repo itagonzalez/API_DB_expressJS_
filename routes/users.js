@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
-const { route } = require('./timestamps');
 
 // Obtener todos los usuarios
 router.get('/', usersController.getAllUsers);

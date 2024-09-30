@@ -23,15 +23,7 @@ function createTables() {
         address TEXT NOT NULL,
         companyName TEXT NOT NULL,
         dateBirth TEXT NOT NULL
-    )`);
-    
-    db.run(`CREATE TABLE IF NOT EXISTS timestamps (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        userId INTEGER,
-        checkIn DATETIME,
-        checkOut DATETIME,
-        FOREIGN KEY (userId) REFERENCES users(id)
-    )`);
+    )`);   
 }
 
 module.exports = db;
