@@ -13,10 +13,10 @@ exports.getAllUsers = (req, res) => {
 
 // Crear un nuevo usuario
 exports.createUser = (req, res) => {
-    const { user, name, lastName, password, email, address, companyName, dateBirth } = req.body;
-    const sql = `INSERT INTO users (user, name, lastName, password, email, address, companyName, dateBirth) 
+    const { user, name, lastName, password, email, address, phone, dateBirth } = req.body;
+    const sql = `INSERT INTO users (user, name, lastName, password, email, address, phone, dateBirth) 
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-    const params = [user, name, lastName, password, email, address, companyName, dateBirth];
+    const params = [user, name, lastName, password, email, address, phone, dateBirth];
     
     db.run(sql, params, function(err) {
         if (err) {
@@ -70,11 +70,11 @@ exports.getUserByUserName = (req, res) => {
 // Actualizar un usuario
 exports.updateUser = (req, res) => {
     const userId = req.params.id;
-    const { user, name, lastName, password, email, address, companyName, dateBirth } = req.body;
+    const { user, name, lastName, password, email, address, phone, dateBirth } = req.body;
     const sql = `UPDATE users 
-                 SET user = ?, name = ?, lastName = ?, password = ?, email = ?, address = ?, companyName = ?, dateBirth = ? 
+                 SET user = ?, name = ?, lastName = ?, password = ?, email = ?, address = ?, phone = ?, dateBirth = ? 
                  WHERE id = ?`;
-    const params = [user, name, lastName, password, email, address, companyName, dateBirth, userId];
+    const params = [user, name, lastName, password, email, address, phone, dateBirth, userId];
     
     db.run(sql, params, function(err) {
         if (err) {
